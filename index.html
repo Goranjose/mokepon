@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="theme-color" content="#9EB23B" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mokepon!</title>
+  <script src="./src/index.js" defer></script>
+  <link href="./style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <section id="mascota">
+    <h1 class="titulo">MOKEPON!</h1>
+    <h2 class="subtitulo">Selecciona tu mascota:</h2>
+
+    <div class="tarjetas">
+      <input id="hipodoge" name="mascota" type="radio" />
+      <label class="tarjeta-mascota" for="hipodoge">
+        <p>Hipodoge</p>
+        <img src="./assets/mokepons_mokepon_hipodoge_attack.png" alt="Hipodoge" />
+      </label>
+
+      <input id="capipepo" name="mascota" type="radio" />
+      <label class="tarjeta-mascota" for="capipepo">
+        <p>Capipepo</p>
+        <img src="./assets/mokepons_mokepon_capipepo_attack.png" alt="Capipepo" />
+      </label>
+
+      <input id="ratigueya" name="mascota" type="radio" />
+      <label class="tarjeta-mascota" for="ratigueya">
+        <p>Ratigueya</p>
+        <img src="./assets/mokepons_mokepon_ratigueya_attack.png" alt="Ratigueya" />
+      </label>
+    </div>
+
+    <!-- Hipodoge -> Agua
+    Capipepo -> Tierra
+    Ratigueya -> Fuego
+    Langostelvis -> Agua y Fuego
+    Tucapalma -> Agua y Tierra
+    Pydos -> Tierra y Fuego -->
+    <button id="btn-mascota">Continuar</button>
+  </section>
+
+  <section id="ataque">
+    <h1 class="titulo">MOKEPON!</h1>
+    <h2 class="subtitulo">Selecciona tu ataque:</h2>
+
+    <div class="botones-ataque">
+      <button id="btn-fuego">Fuego 🔥</button>
+      <button id="btn-agua">Agua 💧</button>
+      <button id="btn-planta">Planta 🌱</button>
+    </div>
+
+    <section id="mensaje">
+      <p id="resultado" class="tamaño-mensaje">Mucha suerte</p>
+      <div id="reiniciar">
+        <button id="btn-reiniciar">Volver a jugar</button>
+      </div>
+    </section>
+
+    <section class="estadisticas">
+      <div>
+        <p id="vida-jugador">💚💚💚</p>
+        <p id="mascota-jugador"></p>
+        <div id="ataque-jugador">
+          <p id="elemento-jugador"> </p>
+        </div>
+      </div>
+      <div>
+        <p class="versus">VS</p>
+      </div>
+      <div>
+        <p id="vida-enemigo">💚💚💚</p>
+        <p id="mascota-enemigo"></p>
+        <div id="ataque-enemigo">
+          <p id="elemento-enemigo"> </p>
+        </div>
+      </div>
+    </section>
+  </section>
+</body>
+
+</html>
