@@ -68,8 +68,8 @@ input {
 }
 
 .tarjeta-mascota {
-  width: 160px;
-  height: 160px;
+  width: 168px;
+  height: 168px;
   cursor: pointer;
   background-color: var(--color_2);
   margin: 20px;
@@ -88,6 +88,7 @@ input {
   margin-block-end: 0.4em;
   font-weight: 700;
   transition: all 0.2s ease-out;
+  text-transform: capitalize;
 }
 
 .tarjeta-mascota img {
@@ -99,8 +100,8 @@ input {
 
 input:checked+label {
   background-color: var(--color_1);
-  width: 180px;
-  height: 180px;
+  width: 188px;
+  height: 188px;
   border: 2px solid var(--color_4);
   margin: 10px;
   transition: all 0.2s ease-out;
@@ -186,6 +187,18 @@ input:checked+label p {
   font-size: 2.4rem;
 }
 
+#mascota-jugador,
+#mascota-enemigo {
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: row;
+  margin-top: 0;
+}
+
+.mini-mokepon {
+  width: 60px;
+}
+
 @media (max-width: 360px) {
   .titulo {
     height: 48px;
@@ -236,5 +249,10 @@ input:checked+label p {
   .estadisticas div {
     justify-content: center;
     margin-top: 8px;
+  }
+
+  #vida-jugador,
+  #vida-enemigo {
+    font-size: 2rem;
   }
 }
