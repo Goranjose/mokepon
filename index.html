@@ -38,6 +38,17 @@
     <button id="btn-mascota">Continuar</button>
   </section>
 
+  <section id="ver-mapa">
+    <h1 class="titulo">Recorre el mapa con tu Mokepon</h1>
+    <canvas id="mapa"></canvas>
+    <div>
+      <button onmouseup="detenerMovimiento()" class="btn-movimiento" id="mover-x-izquierda">←</button>
+      <button onmouseup="detenerMovimiento()" class="btn-movimiento" id="mover-y-arriba">↑</button>
+      <button onmouseup="detenerMovimiento()" class="btn-movimiento" id="mover-y-abajo">↓</button>
+      <button onmouseup="detenerMovimiento()" class="btn-movimiento" id="mover-x-derecha">→</button>
+    </div>
+  </section>
+
   <section id="ataque">
     <h1 class="titulo">MOKEPON!</h1>
     <h2 class="subtitulo">Selecciona tu ataque:</h2>

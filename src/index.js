@@ -24,8 +24,17 @@ const contenedorTarjetas = $("contenedor-tarjetas");
 
 const btnAtaques = $("btn-ataques");
 
+const sectionVerMapa = $("ver-mapa");
+const mapa = $("mapa");
+sectionVerMapa.style.display = "none";
+
 let ataqueJugador;
 let ataqueEnemigo;
+
+let lienzo = mapa.getContext("2d");
+let intervalo;
+let mapaBackground = new Image();
+mapaBackground.src = "../assets/mokemap.png";
 
 // ELEMENTOS DE LOS MOKEPONES
 let fuego = "🔥";
@@ -62,6 +71,14 @@ class Mokepon {
     this.nombre = nombre;
     this.imagen = imagen;
     this.ataques = [];
+    this.x = 20;
+    this.y = 30;
+    this.ancho = 80;
+    this.alto = 80;
+    this.mapaImagen = new Image();
+    this.mapaImagen.src = this.imagen;
+    this.velocidadX = 0;
+    this.velocidadY = 0;
   }
 }
 
@@ -234,13 +251,23 @@ const secuenciaAtaque = () => {
 };
 
 const mostrar = () => {
+  mapa.width = 480
+  mapa.height = 360
+  intervalo = setInterval(pintarCanvas, 50);
+
   sectionMascota.style.display = "none";
-  sectionAtaque.style.display = "flex";
+  sectionVerMapa.style.display = "flex";
+  pintarCanvas();
+
+  window.addEventListener("keydown", presionarTecla);
+  window.addEventListener("keyup", detenerMovimiento);
+  // sectionAtaque.style.display = "flex";
 
   mascotaJugador.innerHTML = `
   <img class="mini-mokepon" src=${mascotaElegidaJugador.imagen} alt="${mascotaElegidaJugador.nombre}">
   <p>${mascotaElegidaJugador.nombre}</p>
   `;
+
 };
 
 const seleccionarMascotaEnemigo = () => {
@@ -260,6 +287,79 @@ const seleccionarMascotaEnemigo = () => {
   // } else {
   //   spanMascotaEnemigo.textContent = "Ratigueya";
   // }
+};
+
+const pintarCanvas = () => {
+  mascotaElegidaJugador.x =
+    mascotaElegidaJugador.x + mascotaElegidaJugador.velocidadX;
+  mascotaElegidaJugador.y =
+    mascotaElegidaJugador.y + mascotaElegidaJugador.velocidadY;
+
+
+  lienzo.clearRect(0, 0, mapa.width, mapa.height);
+  lienzo.drawImage(mapaBackground, 0, 0, mapa.width, mapa.height);
+  lienzo.drawImage(
+    mascotaElegidaJugador.mapaImagen,
+    mascotaElegidaJugador.x,
+    mascotaElegidaJugador.y,
+    mascotaElegidaJugador.ancho,
+    mascotaElegidaJugador.alto
+  );
+};
+
+const moverHorizontalIzquierda = () => {
+  mascotaElegidaJugador.velocidadX = -4;
+};
+
+const moverHorizontalDerecha = () => {
+  mascotaElegidaJugador.velocidadX = 4;
+};
+
+const moverVerticalArriba = () => {
+  mascotaElegidaJugador.velocidadY = -4;
+};
+
+const moverVerticalAbajo = () => {
+  mascotaElegidaJugador.velocidadY = 4;
+};
+
+const moverIzquierda = $("mover-x-izquierda");
+const moverDerecha = $("mover-x-derecha");
+
+const moverArriba = $("mover-y-arriba");
+const moverAbajo = $("mover-y-abajo");
+
+moverIzquierda.addEventListener("mousedown", moverHorizontalIzquierda);
+moverDerecha.addEventListener("mousedown", moverHorizontalDerecha);
+
+moverArriba.addEventListener("mousedown", moverVerticalArriba);
+moverAbajo.addEventListener("mousedown", moverVerticalAbajo);
+
+// const detenerMokepon = document.querySelectorAll(".btn-movimiento");
+// detenerMokepon.addEventListener("mouseup", detenerMovimiento);
+
+const presionarTecla = (event) => {
+  switch (event.key) {
+    case "ArrowLeft":
+      moverHorizontalIzquierda();
+      break;
+    case "ArrowRight":
+      moverHorizontalDerecha();
+      break;
+    case "ArrowUp":
+      moverVerticalArriba();
+      break;
+    case "ArrowDown":
+      moverVerticalAbajo();
+      break;
+    default:
+      break;
+  }
+};
+
+const detenerMovimiento = () => {
+  mascotaElegidaJugador.velocidadX = 0;
+  mascotaElegidaJugador.velocidadY = 0;
 };
 
 const aleatorio = (min, max) => {
