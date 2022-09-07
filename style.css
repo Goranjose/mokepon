@@ -135,10 +135,8 @@ input:checked+label p {
   border: 2px solid white;
 } */
 
-.btn-movimiento {
-  font-size: 2rem;
-  width: 60px;
-  height: 60px;
+.botones-movimiento {
+  display: none;
 }
 
 #ataque {
@@ -246,6 +244,28 @@ input:checked+label p {
 
   #btn-mascota {
     margin-bottom: 20px;
+  }
+
+  .botones-movimiento {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .botones-posicion-abajo {
+    display: flex;
+  }
+
+  .btn-movimiento {
+    font-size: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    margin: 4px;
+    padding: 32px;
   }
 
   .botones-ataque {

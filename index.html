@@ -2,12 +2,12 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="theme-color" content="#9EB23B" />
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#9EB23B">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mokepon!</title>
   <!-- <script src="./src/index.js" defer></script> -->
-  <link href="./style.css" rel="stylesheet" />
+  <link href="./style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     <h1 class="titulo">MOKEPON!</h1>
     <h2 class="subtitulo">Selecciona tu mascota:</h2>
 
-    <div id="contenedor-tarjetas" class="tarjetas">
+    <div class="tarjetas" id="contenedor-tarjetas">
       <!-- <input id="hipodoge" name="mascota" type="radio" />
       <label class="tarjeta-mascota" for="hipodoge">
         <p>Hipodoge</p>
@@ -39,38 +39,45 @@
   </section>
 
   <section id="ver-mapa">
-    <h1 class="titulo">Recorre el mapa con tu Mokepon</h1>
+    <h1 class="titulo">MOKEPON!</h1>
+    <h2 class="subtitulo">Recorre el mapa con tu Mokepon</h2>
     <canvas id="mapa"></canvas>
-    <div>
-      <button onmouseup="detenerMovimiento()" class="btn-movimiento" id="mover-x-izquierda">←</button>
-      <button onmouseup="detenerMovimiento()" class="btn-movimiento" id="mover-y-arriba">↑</button>
-      <button onmouseup="detenerMovimiento()" class="btn-movimiento" id="mover-y-abajo">↓</button>
-      <button onmouseup="detenerMovimiento()" class="btn-movimiento" id="mover-x-derecha">→</button>
+    <div class="botones-movimiento" onmousedown="return false" onselectstart="return false">
+      <button class="btn-movimiento" id="mover-y-arriba" ontouchend="detenerMovimiento()"
+        onmouseup="detenerMovimiento()">
+        ↑
+      </button>
+      <div class="botones-posicion-abajo">
+        <button class="btn-movimiento" id="mover-x-izquierda" ontouchend="detenerMovimiento()"
+          onmouseup="detenerMovimiento()">
+          ←
+        </button>
+        <button class="btn-movimiento" id="mover-y-abajo" ontouchend="detenerMovimiento()"
+          onmouseup="detenerMovimiento()">
+          ↓
+        </button>
+        <button class="btn-movimiento" id="mover-x-derecha" ontouchend="detenerMovimiento()"
+          onmouseup="detenerMovimiento()">
+          →
+        </button>
+      </div>
     </div>
   </section>
 
   <section id="ataque">
     <h1 class="titulo">MOKEPON!</h1>
-    <h2 class="subtitulo">Selecciona tu ataque:</h2>
+    <h2 class="subtitulo">Selecciona secuencia de ataque:</h2>
 
-    <div id="btn-ataques" class="botones-ataque">
+    <div class="botones-ataque" id="btn-ataques">
       <!-- <button id="btn-fuego">Fuego 🔥</button>
       <button id="btn-agua">Agua 💧</button>
       <button id="btn-planta">Planta 🌱</button> -->
     </div>
 
-    <section id="mensaje">
-      <p id="resultado" class="tamaño-mensaje">Mucha suerte</p>
-      <div id="reiniciar">
-        <button id="btn-reiniciar">Volver a jugar</button>
-      </div>
-    </section>
-
     <section class="estadisticas">
       <div>
         <p id="vida-jugador">0</p>
-        <div id="mascota-jugador">
-        </div>
+        <div id="mascota-jugador"></div>
         <div id="ataque-jugador">
           <!-- <p id="elemento-jugador"></p> -->
         </div>
@@ -80,13 +87,20 @@
       </div>
       <div>
         <p id="vida-enemigo">0</p>
-        <div id="mascota-enemigo">
-        </div>
+        <div id="mascota-enemigo"></div>
         <div id="ataque-enemigo">
           <!-- <p id="elemento-enemigo"></p> -->
         </div>
       </div>
     </section>
+
+    <section id="mensaje">
+      <p class="tamaño-mensaje" id="resultado">Mucha suerte</p>
+      <div id="reiniciar">
+        <button id="btn-reiniciar">Volver a jugar</button>
+      </div>
+    </section>
+
   </section>
 
   <!-- llegue a la conclusión de que la etiqueta <script> queda mejor aqui -->
