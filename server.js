@@ -8,7 +8,9 @@ app.use(express.static("public"));
 app.use(cors());
 app.use(express.json());
 
-const puerto = 8080;
+// const puerto = 8080;
+const puerto = process.env.PORT || 8080;
+
 
 const jugadores = [];
 
