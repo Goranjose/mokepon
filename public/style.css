@@ -266,6 +266,7 @@ input:checked+label p {
     height: 60px;
     margin: 4px;
     padding: 32px;
+    user-select: none;
   }
 
   .botones-ataque {

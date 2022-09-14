@@ -4,6 +4,7 @@ const { request, application } = require("express");
 
 const app = express();
 
+app.use(express.static("public"));
 app.use(cors());
 app.use(express.json());
 
@@ -108,6 +109,15 @@ app.get("/mokepon/:jugadorId/ataques", (req, res) => {
     ataques: jugador.ataques || [],
   });
 });
+
+// LIMPIAR JUEGO
+// app.delete("/mokepon/:jugadorId/id", (req, res) => {
+//   const jugadorId = req.params.jugadorId || "";
+//   // const jugador = jugadores.find((jugador) => jugador.id === jugadorId);
+
+//   res.end();
+
+// });
 
 app.listen(puerto, () => {
   console.log("El Puerto " + puerto + " esta activo");

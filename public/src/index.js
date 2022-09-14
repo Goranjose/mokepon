@@ -181,7 +181,7 @@ mokepones.forEach((mokepon) => {
 let enemigoColision;
 
 // const unirseAlJuego = () => {
-//   fetch("http://localhost:8080/unirse").then((res) => {
+//   fetch("http://192.168.0.178:8080/unirse").then((res) => {
 //     if (res.ok) {
 //       res.text().then((respuesta) => {
 //         console.log(respuesta);
@@ -194,7 +194,7 @@ let enemigoColision;
 unirseAlJuego();
 
 function unirseAlJuego() {
-  fetch("http://localhost:8080/unirse").then(function (res) {
+  fetch("http://192.168.0.178:8080/unirse").then(function (res) {
     if (res.ok) {
       res.text().then(function (respuesta) {
         console.log(respuesta);
@@ -236,7 +236,7 @@ const seleccionarMascotaJugador = () => {
 };
 
 const seleccionarMokepon = (mascotaJugador) => {
-  fetch(`http://localhost:8080/mokepon/${jugadorId}`, {
+  fetch(`http://192.168.0.178:8080/mokepon/${jugadorId}`, {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -302,7 +302,7 @@ const secuenciaAtaque = () => {
 };
 
 const enviarAtaques = () => {
-  fetch(`http://localhost:8080/mokepon/${jugadorId}/ataques`, {
+  fetch(`http://192.168.0.178:8080/mokepon/${jugadorId}/ataques`, {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -316,17 +316,19 @@ const enviarAtaques = () => {
 };
 
 const obtenerAtaques = () => {
-  fetch(`http://localhost:8080/mokepon/${enemigoId}/ataques`).then((res) => {
-    if (res.ok) {
-      res.json().then((data) => {
-        if (data.ataques.length === 4) {
-          secuenciaEnemigo = data.ataques;
-          console.log("Secuencia Enemigo: ", secuenciaEnemigo);
-          combate();
-        }
-      });
+  fetch(`http://192.168.0.178:8080/mokepon/${enemigoId}/ataques`).then(
+    (res) => {
+      if (res.ok) {
+        res.json().then((data) => {
+          if (data.ataques.length === 4) {
+            secuenciaEnemigo = data.ataques;
+            console.log("Secuencia Enemigo: ", secuenciaEnemigo);
+            combate();
+          }
+        });
+      }
     }
-  });
+  );
 };
 
 const mostrar = () => {
@@ -403,7 +405,7 @@ const pintarCanvas = () => {
 };
 
 const enviarPosicion = (x, y) => {
-  fetch(`http://localhost:8080/mokepon/${jugadorId}/posicion`, {
+  fetch(`http://192.168.0.178:8080/mokepon/${jugadorId}/posicion`, {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -663,6 +665,7 @@ const crearMensajeFinal = (resultadoFinal) => {
 };
 
 const reiniciarJuego = () => {
+  // limpiarJuego();
   location.reload();
 };
 
@@ -723,6 +726,16 @@ const mostarBatalla = () => {
 //       break;
 //   }
 // };
+
+const limpiarJuego = () => {
+  fetch(`http://192.168.0.178:8080/mokepon/${jugadorId}/id`, {
+    method: "DELETE",
+    headers: {
+      "content-type": "aplicacion/json",
+    },
+    body: null,
+  });
+};
 
 btnMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
 
