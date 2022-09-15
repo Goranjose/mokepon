@@ -2,7 +2,7 @@
 
 ## [Demo](https://mokepon-multiplayer.herokuapp.com/)
 
-![Tux, the Linux mascot](/assets/images/tux.png)
+<img src="/public/assets/mokemap" alt="My cool logo"/>
 
 ## License:
 
