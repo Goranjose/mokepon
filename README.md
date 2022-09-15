@@ -6,6 +6,14 @@
 
 ## [Demo](https://mokepon-multiplayer.herokuapp.com/)
 
+## Installation Steps:
+
+1. Clone the repository.
+2. Open the project with Xcode.
+3. Run the app and enjoy it.
+
+## The process 
+
 ## License:
 
 > This project is licensed under the MIT License
