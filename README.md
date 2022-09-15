@@ -2,7 +2,7 @@
 
 ## [Demo](https://mokepon-multiplayer.herokuapp.com/)
 
-<img src="/public/assets/mokemap" alt="My cool logo"/>
+<img src="./public/assets/mokemap" alt="My cool logo"/>
 
 ## License:
 
