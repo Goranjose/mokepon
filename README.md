@@ -1,5 +1,9 @@
-<h1 align="center" id="title">Quizz simulator</h1>
+<h1 align="center" id="title">Mokepon</h1>
+
+## License:
+
+> This project is licensed under the MIT License
 
 ## Author
 
-Made with 💜 by [Orangel Jose](https://www.linkedin.com/in/orangel-gonzalez)
+Made with 💚🖤🤍 by [Orangel Jose [lonchop]](https://www.linkedin.com/in/orangel-gonzalez)
