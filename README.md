@@ -2,6 +2,8 @@
 
 ## [Demo](https://mokepon-multiplayer.herokuapp.com/)
 
+![Tux, the Linux mascot](/assets/images/tux.png)
+
 ## License:
 
 > This project is licensed under the MIT License
