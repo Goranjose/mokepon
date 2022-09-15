@@ -12,7 +12,13 @@
 2. Open the project with Xcode.
 3. Run the app and enjoy it.
 
-## The process 
+## The process
+### Built with
+
+Technologies used in the project:
+
+*   JavaScript Vanilla
+*   Node.js
 
 ## License:
 
