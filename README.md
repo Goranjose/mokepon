@@ -1,6 +1,6 @@
 <h1 align="center" id="title">Mokepon</h1>
 
-<img src="./public/assets/mokemap.png" width="400" alt="My cool logo"/>
+<img align="center" src="./public/assets/mokemap.png" width="400" alt="My cool logo"/>
 
 ## [Demo](https://mokepon-multiplayer.herokuapp.com/)
 
