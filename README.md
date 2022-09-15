@@ -1,8 +1,8 @@
 <h1 align="center" id="title">Mokepon</h1>
 
-## [Demo](https://mokepon-multiplayer.herokuapp.com/)
+<img src="./public/assets/mokemap.png" width="400" alt="My cool logo"/>
 
-<img src="./public/assets/mokemap.png" width="200" alt="My cool logo"/>
+## [Demo](https://mokepon-multiplayer.herokuapp.com/)
 
 ## License:
 
